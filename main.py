@@ -1,5 +1,6 @@
 from nba_api.stats.endpoints import commonplayerinfo, shotchartdetail
 import socket
+import os
 from http.server import BaseHTTPRequestHandler
 from io import BytesIO
 
@@ -25,7 +26,7 @@ class HTTPRequest(BaseHTTPRequestHandler):
 
 
 SERVER_HOST = '0.0.0.0'
-SERVER_PORT = 8080
+SERVER_PORT = os.getenv('PORT')
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
