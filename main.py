@@ -56,6 +56,7 @@ while True:
 
     # Send HTTP response
     response = 'HTTP/1.0 200 OK\nAccess-Control-Allow-Origin: *\nAccess-Control-Allow-Headers: *\n\n' + data
+    print("sending response")
     client_connection.sendall(response.encode())
     client_connection.close()
 
