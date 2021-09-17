@@ -23,11 +23,12 @@ def create_app(config_name):
     @app.route('/shotchart', methods=['GET'])
     def get_shot_data():
         player_id = request.args.get('playerid', '')
-        data = GetInfo.getShot(player_id, 0)
+        team_id = request.args.get('teamid', '')
+        data = GetInfo.getShot(player_id, team_id)
 
         response = jsonify(data)
         response.status_code = 200
-        response.headers['Acess-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Origin'] = '*'
         return response
 
     return app
