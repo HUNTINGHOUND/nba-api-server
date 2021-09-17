@@ -43,6 +43,8 @@ while True:
     request = HTTPRequest(request_text)
 
     print(request_text)
+    if len(request_text) == 0:
+        continue
 
     data = ""
     if request.headers["Want"] == "CommonPlayerInfo":
