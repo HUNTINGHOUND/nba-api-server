@@ -24,7 +24,7 @@ class HTTPRequest(BaseHTTPRequestHandler):
         self.error_message = message
 
 
-SERVER_HOST = 'https://nba-server-shotchart.herokuapp.com/'
+SERVER_HOST = '0.0.0.0'
 SERVER_PORT = 8080
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
